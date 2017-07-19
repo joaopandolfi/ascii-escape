@@ -84,7 +84,7 @@
 
 1500433783 c:\users\joaocarlos\projetos\games\ascii-scape\src\color.h
 
-1500433528 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\engine.c
+1500436832 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\engine.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -96,7 +96,7 @@
 
 1500433779 c:\users\joaocarlos\projetos\games\ascii-scape\src\structs.h
 
-1500435277 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\main.cpp
+1500436155 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\main.cpp
 	<cstdlib>
 	<iostream>
 	<stdlib.h>

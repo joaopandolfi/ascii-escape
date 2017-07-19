@@ -60,9 +60,8 @@ int main()
     textcolor(LIGHT_GRAY);
     backcolor(BLACK);
 
-    while ( keycode != 27 )         // ESCAPE
-    {
-            if (perso->fase->numero > nfase){
+    while ( keycode != 27 ){         // ESCAPE
+        if (perso->fase->numero > nfase){
             printf("\n Carregando... \n");
             nfase = perso->fase->numero;
             descarrega_mapa(origem,perso);
@@ -76,7 +75,7 @@ int main()
             textcolor(LIGHT_GRAY);
             backcolor(BLACK);
            }
-           if(ctl == 2){
+        if(ctl == 2){
             descarrega_mapa(origem,perso);
             printf("\n Reiniciando...\n");
             system("cls");
@@ -90,7 +89,7 @@ int main()
             textcolor(LIGHT_GRAY);
             backcolor(BLACK);
             ctl = 0;
-                  }
+        }
         // aguardar uma tecla ser pressionada
         while ( ! kbhit() ) ;
         // ler o código da tecla pressionada
@@ -125,24 +124,24 @@ int main()
              save(perso);
             }
        if(perso->bau[2] == 1){
-        if ( keycode == 49 ){//1
-             bau(perso,1,origem);
-            }
-        else if ( keycode == 50 ){//2
-             bau(perso,2,origem);
-            }
-        else if ( keycode == 51 ){//3
-             bau(perso,3,origem);
-            }
-        else if ( keycode == 52 ){//4
-             bau(perso,4,origem);
-            }
-        else if ( keycode == 56 ){//8
-             bau(perso,8,origem);
-            }
-        else if ( keycode == 57 ){//9
-             bau(perso,9,origem);
-            }
+            if ( keycode == 49 ){//1
+                 bau(perso,1,origem);
+                }
+            else if ( keycode == 50 ){//2
+                 bau(perso,2,origem);
+                }
+            else if ( keycode == 51 ){//3
+                 bau(perso,3,origem);
+                }
+            else if ( keycode == 52 ){//4
+                 bau(perso,4,origem);
+                }
+            else if ( keycode == 56 ){//8
+                 bau(perso,8,origem);
+                }
+            else if ( keycode == 57 ){//9
+                 bau(perso,9,origem);
+                }
         }
    }
 

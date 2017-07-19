@@ -5,84 +5,99 @@
 
 void tela(char val,int ctl){
      //printa com efeito o mapa
-      if(val=='#'){
-        textcolor(DARK_GRAY);
-        backcolor(DARK_GRAY);
-      printf("%c",val);
-      }
-      else if(val=='X'){
-      textcolor(WHITE);
-      backcolor(BLACK);
-      if(ctl == 1)
-      printf("e");
-      else
-      printf(" ");
-      }
-      else if(val=='e'){
-      textcolor(WHITE);
-      backcolor(BLACK);
-      printf("e");
-      }
-      else if(val=='h'){
-      textcolor(BLACK);
-      backcolor(WHITE);
-      printf("h");
-      }
-      else if(val=='@'){
-      textcolor(BLACK);
-      backcolor(WHITE);
-      printf("?");
-      }
-      else if(val=='1'){
-      textcolor(LIGHT_RED);
-      backcolor(BLACK);
-      printf("+");
-      }
-      else if(val=='2'){
-      textcolor(LIGHT_BLUE);
-      backcolor(BLACK);
-      printf("+");
-      }
-      else if(val=='3'){
-      textcolor(MAGENTA);
-      backcolor(BLACK);
-      printf("+");
-      }
-      else if(val=='4'){
-      textcolor(YELLOW);
-      backcolor(BLACK);
-      printf("+");
-      }
-      else if(val=='A'){
-      textcolor(LIGHT_RED);
-      backcolor(BLACK);
-      printf("0");
-      }
-      else if(val=='B'){
-      textcolor(LIGHT_BLUE);
-      backcolor(BLACK);
-      printf("0");
-      }
-      else if(val=='C'){
-      textcolor(MAGENTA);
-      backcolor(BLACK);
-      printf("0");
-      }
-      else if(val=='D'){
-      textcolor(YELLOW);
-      backcolor(BLACK);
-      printf("0");
-      }
-      else{
-      backcolor(BLACK);
-      printf("%c",val);
-      }
+     switch (val){
+        case '#':
+            textcolor(DARK_GRAY);
+            backcolor(DARK_GRAY);
+            printf("%c",val);
+        break;
+
+        case 'X':
+            textcolor(WHITE);
+            backcolor(BLACK);
+            if(ctl == 1)
+                printf("e");
+            else
+                printf(" ");
+        break;
+
+        case 'e':
+            textcolor(WHITE);
+            backcolor(BLACK);
+            printf("e");
+        break;
+
+        case 'h':
+            textcolor(BLACK);
+            backcolor(WHITE);
+            printf("h");
+        break;
+
+        case '@':
+              textcolor(BLACK);
+              backcolor(WHITE);
+              printf("?");
+        break;
+
+        case '1':
+              textcolor(LIGHT_RED);
+              backcolor(BLACK);
+              printf("+");
+        break;
+
+        case '2':
+              textcolor(LIGHT_BLUE);
+              backcolor(BLACK);
+              printf("+");
+        break;
+
+        case '3':
+              textcolor(MAGENTA);
+              backcolor(BLACK);
+              printf("+");
+        break;
+
+        case '4':
+              textcolor(YELLOW);
+              backcolor(BLACK);
+              printf("+");
+        break;
+
+        case 'A':
+              textcolor(LIGHT_RED);
+              backcolor(BLACK);
+              printf("0");
+        break;
+
+        case 'B':
+              textcolor(LIGHT_BLUE);
+              backcolor(BLACK);
+              printf("0");
+        break;
+
+        case 'C':
+              textcolor(MAGENTA);
+              backcolor(BLACK);
+              printf("0");
+        break;
+
+        case 'D':
+              textcolor(YELLOW);
+              backcolor(BLACK);
+              printf("0");
+        break;
+
+        default:
+            backcolor(BLACK);
+            printf("%c",val);
+        break;
+     }
 }
 
 void escreve_pixel(int x,int y, char val){
      gotoxy(x,y);
      tela(val,0);
-     }
+}
 
 void save(Perso * p1){
      FILE * save;
@@ -96,7 +111,7 @@ void save(Perso * p1){
      fclose(save);
      gotoxy(2,23);
      printf("Salvo");
-     }
+}
 
 
 void atualiza_tela(Mapa * origem,Perso * perso){
@@ -107,16 +122,15 @@ void atualiza_tela(Mapa * origem,Perso * perso){
     Mapa * aux;
     printf("\n");
     for(auy=origem;auy->linha != NULL;auy = auy->linha){
-    backcolor(BLACK);
-    printf(" ");
-     for(aux=auy;aux->prox != NULL;aux = aux->prox){
-      //printa mapa
-      tela(aux->val,0);
-      }
-      tela(aux->val,0);
-     printf("\n");
-     }
+        backcolor(BLACK);
+        printf(" ");
+        for(aux=auy;aux->prox != NULL;aux = aux->prox)
+            tela(aux->val,0);//printa mapa
+        tela(aux->val,0);
+        printf("\n");
     }
+}
+
 Perso * inventario(Perso * p1){
       int i;
       char val;
@@ -124,155 +138,168 @@ Perso * inventario(Perso * p1){
       textcolor(LIGHT_GRAY);
       printf("\n\t INVENTARIO: ");
       for(i=0;i<4;i++){
-       textcolor(LIGHT_GRAY);
-       printf("|");
+        textcolor(LIGHT_GRAY);
+        printf("|");
        switch(p1->inv[i]){
-       case 1:
-       textcolor(LIGHT_RED);
-       val = '+';
-       break;
-       case 2:
-       textcolor(LIGHT_BLUE);
-       val = '+';
-       break;
-       case 3:
-       textcolor(MAGENTA);
-       val = '+';
-       break;
-       case 4:
-       textcolor(YELLOW);
-       val = '+';
-       break;
-       default:
-       val = ' ';
+            case 1:
+                textcolor(LIGHT_RED);
+                val = '+';
+            break;
+
+            case 2:
+                textcolor(LIGHT_BLUE);
+                val = '+';
+            break;
+
+            case 3:
+                textcolor(MAGENTA);
+                val = '+';
+            break;
+
+            case 4:
+                textcolor(YELLOW);
+                val = '+';
+            break;
+
+            default:
+                val = ' ';
        }
       printf(" %c ",val);
-      }
-      textcolor(LIGHT_GRAY);
-      printf("|");
-      if(p1->bau[2] == 1){
-      printf(" BAU: ");
-      for(i=0;i<2;i++){
-       textcolor(LIGHT_GRAY);
-       printf("|");
-       switch(p1->bau[i]){
-       case 1:
-       textcolor(LIGHT_RED);
-       val = '+';
-       break;
-       case 2:
-       textcolor(LIGHT_BLUE);
-       val = '+';
-       break;
-       case 3:
-       textcolor(MAGENTA);
-       val = '+';
-       break;
-       case 4:
-       textcolor(YELLOW);
-       val = '+';
-       break;
-       default:
-       val = ' ';
-       }
-      printf(" %c ",val);
-      }
+    }
+
+    textcolor(LIGHT_GRAY);
+    printf("|");
+    if(p1->bau[2] == 1){
+        printf(" BAU: ");
+        for(i=0;i<2;i++){
+            textcolor(LIGHT_GRAY);
+            printf("|");
+            switch(p1->bau[i]){
+                case 1:
+                    textcolor(LIGHT_RED);
+                    val = '+';
+                break;
+
+                case 2:
+                    textcolor(LIGHT_BLUE);
+                    val = '+';
+                break;
+
+                case 3:
+                    textcolor(MAGENTA);
+                    val = '+';
+                break;
+
+                case 4:
+                    textcolor(YELLOW);
+                    val = '+';
+                break;
+
+                default:
+                    val = ' ';
+            }
+            printf(" %c ",val);
+        }
       textcolor(LIGHT_GRAY);
       backcolor(BLACK);
       printf("|\n\t               1   2   3   4          8   9");
-      }
-      else if(p1->bau[2] == 2){
+    }
+    else if(p1->bau[2] == 2){
        //apaga o "bau"
        printf("               \n\t                                           ");
-       }
-      }
+    }
+}
 
 void bau(Perso * p1,int com,Mapa * origem){
 
       switch(com){
       case 1:
            if(p1->bau[0] == 0){
-           p1->bau[0] = p1->inv[0];
-           p1->inv[0] = 0;
+                p1->bau[0] = p1->inv[0];
+                p1->inv[0] = 0;
            }
            else if(p1->bau[1] == 0){
-           p1->bau[1] = p1->inv[0];
-           p1->inv[0] = 0;
+                p1->bau[1] = p1->inv[0];
+                p1->inv[0] = 0;
            }
       break;
+
       case 2:
            if(p1->bau[0] == 0){
-           p1->bau[0] = p1->inv[1];
-           p1->inv[1] = 0;
+                p1->bau[0] = p1->inv[1];
+                p1->inv[1] = 0;
            }
            else if(p1->bau[1] == 0){
-           p1->bau[1] = p1->inv[1];
-           p1->inv[1] = 0;
+                p1->bau[1] = p1->inv[1];
+                p1->inv[1] = 0;
            }
       break;
+
       case 3:
            if(p1->bau[0] == 0){
-           p1->bau[0] = p1->inv[2];
-           p1->inv[2] = 0;
+                p1->bau[0] = p1->inv[2];
+                p1->inv[2] = 0;
            }
            else if(p1->bau[1] == 0){
-           p1->bau[1] = p1->inv[2];
-           p1->inv[2] = 0;
+                p1->bau[1] = p1->inv[2];
+                p1->inv[2] = 0;
            }
       break;
+
       case 4:
            if(p1->bau[0] == 0){
-           p1->bau[0] = p1->inv[3];
-           p1->inv[3] = 0;
+                p1->bau[0] = p1->inv[3];
+                p1->inv[3] = 0;
            }
            else if(p1->bau[1] == 0){
-           p1->bau[1] = p1->inv[3];
-           p1->inv[3] = 0;
+                p1->bau[1] = p1->inv[3];
+                p1->inv[3] = 0;
            }
       break;
+
       case 8:
            if(p1->inv[0] == 0){
-           p1->inv[0] = p1->bau[0];
-           p1->bau[0] = 0;
+                p1->inv[0] = p1->bau[0];
+                p1->bau[0] = 0;
            }
            else if(p1->inv[1] == 0){
-           p1->inv[1] = p1->bau[0];
-           p1->bau[0] = 0;
+                p1->inv[1] = p1->bau[0];
+                p1->bau[0] = 0;
            }
            else if(p1->inv[2] == 0){
-           p1->inv[2] = p1->bau[0];
-           p1->bau[0] = 0;
+                p1->inv[2] = p1->bau[0];
+                p1->bau[0] = 0;
            }
            else if(p1->inv[3] == 0){
-           p1->inv[3] = p1->bau[0];
-           p1->bau[0] = 0;
+                p1->inv[3] = p1->bau[0];
+                p1->bau[0] = 0;
            }
       break;
       case 9:
            if(p1->inv[0] == 0){
-           p1->inv[0] = p1->bau[1];
-           p1->bau[1] = 0;
+                p1->inv[0] = p1->bau[1];
+                p1->bau[1] = 0;
            }
            else if(p1->inv[1] == 0){
-           p1->inv[1] = p1->bau[1];
-           p1->bau[1] = 0;
+                p1->inv[1] = p1->bau[1];
+                p1->bau[1] = 0;
            }
            else if(p1->inv[2] == 0){
-           p1->inv[2] = p1->bau[1];
-           p1->bau[1] = 0;
+                p1->inv[2] = p1->bau[1];
+                p1->bau[1] = 0;
            }
            else if(p1->inv[3] == 0){
-           p1->inv[3] = p1->bau[1];
-           p1->bau[1] = 0;
+                p1->inv[3] = p1->bau[1];
+                p1->bau[1] = 0;
            }
        break;
       }
-      //gotoxy(10,45);
-      //atualiza_tela(origem,p1);
-      //escreve_pixel(p1->x,p1->y,'e');
-      gotoxy(10,22);
-      inventario(p1);
-      }
+    //gotoxy(10,45);
+    //atualiza_tela(origem,p1);
+    //escreve_pixel(p1->x,p1->y,'e');
+    gotoxy(10,22);
+    inventario(p1);
+}
 
 
 Mapa * carrega_mapa(char arquivo[15],Perso * perso){
