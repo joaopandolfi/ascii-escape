@@ -1,0 +1,118 @@
+# depslib dependency file v1.0
+1500434194 source:c:\users\joaocarlos\projetos\games\ascii-scape\color.c
+	<stdlib.h>
+	<windows.h>
+	"color.h"
+
+1500433783 c:\users\joaocarlos\projetos\games\ascii-scape\color.h
+
+1500433528 source:c:\users\joaocarlos\projetos\games\ascii-scape\engine.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"engine.h"
+
+1500434024 c:\users\joaocarlos\projetos\games\ascii-scape\engine.h
+	"structs.h"
+	"color.h"
+
+1500433779 c:\users\joaocarlos\projetos\games\ascii-scape\structs.h
+
+1500435277 source:c:\users\joaocarlos\projetos\games\ascii-scape\main.cpp
+	<cstdlib>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	"engine.h"
+	"menus.h"
+
+1500435132 c:\users\joaocarlos\projetos\games\ascii-scape\menus.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1500433922 source:c:\users\joaocarlos\projetos\games\ascii-scape\menu.c
+	"structs.h"
+	"menus.h"
+	"color.h"
+
+1500434194 source:c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\color.c
+	<stdlib.h>
+	<windows.h>
+	"color.h"
+
+1500433783 c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\color.h
+
+1500433528 source:c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\engine.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"engine.h"
+
+1500434024 c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\engine.h
+	"structs.h"
+	"color.h"
+
+1500433779 c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\structs.h
+
+1500435277 source:c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\main.cpp
+	<cstdlib>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	"engine.h"
+	"menus.h"
+
+1500435132 c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\menus.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1500433922 source:c:\users\joaocarlos\projetos\games\ascii-scape\ascii-scape\menu.c
+	"structs.h"
+	"menus.h"
+	"color.h"
+
+1500434194 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\color.c
+	<stdlib.h>
+	<windows.h>
+	"color.h"
+
+1500433783 c:\users\joaocarlos\projetos\games\ascii-scape\src\color.h
+
+1500433528 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\engine.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"engine.h"
+
+1500434024 c:\users\joaocarlos\projetos\games\ascii-scape\src\engine.h
+	"structs.h"
+	"color.h"
+
+1500433779 c:\users\joaocarlos\projetos\games\ascii-scape\src\structs.h
+
+1500435277 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\main.cpp
+	<cstdlib>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	"engine.h"
+	"menus.h"
+
+1500435132 c:\users\joaocarlos\projetos\games\ascii-scape\src\menus.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1500433922 source:c:\users\joaocarlos\projetos\games\ascii-scape\src\menu.c
+	"structs.h"
+	"menus.h"
+	"color.h"
+

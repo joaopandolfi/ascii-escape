@@ -1,0 +1,12 @@
+o jogador tem que coletar a chave da porta para ela abrir
+
+no caso
+as chaves serão +
+e as portas 0
+
+e serão separadas por cor
+
+no inventario cabe no max 4 chaves
+
+
+gravar o anterior e verificar se ele é A B C D se for, atualiza pixel ant para ele de volta

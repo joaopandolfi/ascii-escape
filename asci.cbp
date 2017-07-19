@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Project1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="asci" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="src/color.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="src/engine.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="src/header/color.h" />
+		<Unit filename="src/header/engine.h" />
+		<Unit filename="src/lista.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/menu.c">
+			<Option compilerVar="CPP" />
+		</Unit>
+		<Unit filename="src/menus.h" />
+		<Unit filename="src/structs.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

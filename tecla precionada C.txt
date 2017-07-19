@@ -1,0 +1,108 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include <stdio.h>      // printf 
+
+#include <conio.h>      // kbhit, getch
+
+//---------------------------------------------------------------------------
+
+#pragma argsused 
+int main(int argc, char* argv[]) 
+{ 
+    int keycode, normalkey;
+
+    while ( keycode != 27 )         // ESCAPE 
+    {
+
+
+        // aguardar uma tecla ser pressionada 
+        while ( ! kbhit() ) ;
+
+
+        // ler o código da tecla pressionada 
+        keycode = getch();
+
+
+        // keycode = 0 se for tecla especial 
+        normalkey = keycode;
+
+
+        // se tecla especial, 
+        // pegar o próximo código para identificar a tecla pressionada 
+        if ( !normalkey ) 
+            keycode = getch();
+
+
+        if      ( normalkey && keycode >= 48 && keycode <= 57 ) 
+            printf("\nteclou digito %c = %d = valor decimal %d", 
+                    keycode, keycode, (keycode - 48) );
+
+        else if ( normalkey && keycode >= 65 && keycode <= 90 ) 
+            printf("\nteclou letra maiuscula %c = %d", 
+                    keycode, keycode);
+
+        else if ( normalkey && keycode >= 97 && keycode <= 122 ) 
+            printf("\nteclou letra minuscula %c = %d", 
+                    keycode, keycode);
+
+        else if ( !normalkey && keycode >= 59 && keycode <= 68 ) 
+            printf("\nteclou F%1d = %d", 
+                    (keycode - 58), keycode);
+
+        else if ( !normalkey && keycode >= 133 && keycode <= 134 ) 
+            printf("\nteclou F%2d = %d", 
+                    (keycode - 122), keycode);
+
+        else if ( normalkey && keycode == 27 ) 
+            printf("\nteclou ESCAPE = %d", keycode);
+
+        else if ( normalkey && keycode == 8 ) 
+            printf("\nteclou BACKSPACE = %d", keycode);
+
+        else if ( normalkey && keycode == 9 ) 
+            printf("\nteclou TAB = %d", keycode);
+
+        else if ( normalkey && keycode == 13 ) 
+            printf("\nteclou CARRIAGE-RETURN (ENTER) = %d", keycode);
+
+        else if ( normalkey && keycode == 10 ) 
+            printf("\nteclou LINE-FEED (CTRL-ENTER) = %d", keycode);
+
+        else if ( !normalkey && keycode == 75 ) 
+            printf("\nteclou SETA A ESQUERDA = %d", keycode);
+
+        else if ( !normalkey && keycode == 77 ) 
+            printf("\nteclou SETA A DIREITA = %d", keycode);
+
+        else if ( !normalkey && keycode == 72 ) 
+            printf("\nteclou SETA PARA CIMA = %d", keycode);
+
+        else if ( !normalkey && keycode == 80 ) 
+            printf("\nteclou SETA PARA BAIXO = %d", keycode);
+
+        else if ( !normalkey && keycode >= 82 && keycode <= 83 ) 
+            printf("\nteclou %s = %d", 
+                    (keycode == 82 ? "INSERT\0" : "DELETE\0"), keycode);
+
+        else if ( !normalkey && keycode == 71 ) 
+            printf("\nteclou HOME = %d", keycode);
+
+        else if ( !normalkey && keycode == 79 ) 
+            printf("\nteclou END = %d", keycode);
+
+        else if ( !normalkey && keycode == 73 ) 
+            printf("\nteclou PAGE-UP = %d", keycode);
+
+        else if ( !normalkey && keycode == 81 ) 
+            printf("\nteclou PAGE-DOWN = %d", keycode);
+
+        else 
+            printf("\nteclou %c = %d (%s)", 
+                    keycode, keycode, (normalkey ? "normal\0" : "especial\0") ); 
+    }
+
+    return 0; 
+} 
+//---
