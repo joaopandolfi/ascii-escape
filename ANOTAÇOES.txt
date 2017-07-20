@@ -1,4 +1,0 @@
-utlizar gotoxy();
-para atualizar a tela.
-
-so jogar o escrever pixel dentro do atualizar pixel -- ok
